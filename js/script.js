@@ -5,7 +5,7 @@ $(document).ready(function () {
         nextPhoto();
     });
 
-    $(".prev").click(function () {
+    $(".prev").click(function() {
 
         prevPhoto();
     });
@@ -14,15 +14,15 @@ $(document).ready(function () {
 
 function nextPhoto() {
 
-    var nextPhoto = $(".photos img.active");
+    var activePhoto = $(".photos img.active");
 
-    var nextCircle = $(".nav_circle i.active");
+    var activeCircle = $(".nav_circle i.active");
 
-    nextPhoto.removeClass("active");
+    activePhoto.removeClass("active");
 
-    nextCircle.removeClass("active");
+    activeCircle.removeClass("active");
 
-    if(nextPhoto.hasClass("last")) {
+    if(activePhoto.hasClass("last")) {
 
         $("img.first").addClass("active");
 
@@ -31,9 +31,9 @@ function nextPhoto() {
 
     else {
 
-        nextPhoto.next("img").addClass("active");
+        activePhoto.next("img").addClass("active");
 
-        nextCircle.next("i").addClass("active");
+        activeCircle.next("i").addClass("active");
     }
 
 }
@@ -41,15 +41,15 @@ function nextPhoto() {
 
 function prevPhoto() {
 
-    var prevPhoto = $(".photos img.active");
+    var activePhoto = $(".photos img.active");
 
-    var prevCircle = $(".nav_circle i.active")
+    var activeCircle = $(".nav_circle i.active")
 
-    prevPhoto.removeClass("active");
+    activePhoto.removeClass("active");
 
-    prevCircle.removeClass("active");
+    activeCircle.removeClass("active");
 
-    if (prevPhoto.hasClass("first")) {
+    if (activePhoto.hasClass("first")) {
 
         $("img.last").addClass("active");
 
@@ -58,8 +58,8 @@ function prevPhoto() {
 
     else {
 
-        prevPhoto.prev("img").addClass("active");
+        activePhoto.prev("img").addClass("active");
 
-        prevCircle.prev("i").addClass("active");
+        activeCircle.prev("i").addClass("active");
     }
 }
